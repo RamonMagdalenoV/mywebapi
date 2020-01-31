@@ -20,3 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResources([
     'article' => 'Api\ArticleController'
 ]);
+
+
+Route::post('user/register','Auth\RegisterController@register');
+Route::post('user/login', 'Auth\LoginController@login');
+Route::get('user/logout', 'Auth\LoginController@logout');
